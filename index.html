@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <center style="font-size: 30px;"><h1><mark>Inheritance and Prototype</mark></h1></center>
+    <pre>
+        <center style="font-size: 30px;"><h1><mark></mark></h1></center>
+        <h1>     Q1.  Create 2 objects - parent and child. Attach methods to parent and use those methods in child object using parents prototype
+
+    Ans. const parent = {
+         Name : 'Anish'
+         }
+    
+         const child1 = Object.create(parent)
+         child1.surname = 'Pradhan'
+         console.log(`My name is ${child1.Name} ${child1.surname}`)
+
+    Q2. Write code to explain prototype chaining.
+
+    Ans. const way = {
+         route : function() {
+             console.log('Soon you will reach to your place ');
+         }
+         } 
+         const wrongway = Object.create(way)
+    
+         wrongway.wrongroute = function() {
+             console.log('Wrong Turn');
+         }
+         const turn = Object.create(wrongway)
+    
+         turn.turnleft = function() {
+             console.log('Take left to reach your destination');
+         }
+         const reached = Object.create(turn)
+    
+         reached.route()
+         reached.wrongroute()
+         reached.turnleft() 
+    
+    Q3. Add a method to calculate sum of all elements in Array in array's protype, use that method to calculate sum for multiple arrays
+
+    Ans. const arrsum = [2,3,5,4,6]
+         let sum = arrsum.reduce((val1,val2)=> val1+val2)
+         console.log(sum);
+
+
+    </pre>
+</body>
+</html>
